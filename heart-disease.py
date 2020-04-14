@@ -54,12 +54,14 @@ clf_important = RandomForestClassifier(n_estimators=100, random_state = 1,
 clf_important.fit(x_important_train, y_train)
 y_important_pred = clf_important.predict(x_important_test)
 
+'''
+# Uncomment this code block to print chosen most important features
 
 print('\nMost important features:')
 
 for feature_list_index in sfm.get_support(indices=True):
     print('\t - ' + labels[feature_list_index])
-
+'''
 print('\nAccuracy (chosen parameters with highest importance): {}'.format(
     metrics.accuracy_score(y_important_pred, y_pred)))
 
